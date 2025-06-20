@@ -1,0 +1,32 @@
+/**
+ * CSS codes of Navbar component
+ * @see For more information about this component check file: src\Platform\Components\Navbar.ts
+ */
+
+#navbar {
+    background-color: var(--accent-color);
+    color: var(--text-color);
+    border: 1px solid var(--border-color);
+    border-bottom: none;
+    padding: 4px;
+    box-shadow: 0 0 5px var(--shadow-color);
+}
+
+#navbar .navbar-buttons {
+    display: flex;
+    gap: 4px;
+
+    & button {
+        flex-grow: 1;
+        box-sizing: border-box;
+
+        &.active {
+            background-color: var(--component-active-color);
+        }
+    }
+}
+
+/** 
+ * ------------------ Responsive ------------------- 
+ *             700px - 900px - 1250px
+ */

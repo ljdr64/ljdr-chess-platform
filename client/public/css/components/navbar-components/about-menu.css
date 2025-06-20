@@ -1,0 +1,42 @@
+/**
+ * CSS codes of AboutMenu component
+ * @see For more information about this component check file: src\Platform\Components\NavbarComponents\AboutMenu.ts
+ */
+#about-menu {
+    background-color: var(--accent-color);
+    border: 1px solid var(--border-color);
+    color: var(--text-color);
+    overflow: hidden;
+
+    & h1 {
+        text-align: center;
+        padding: 5px 20px;
+        padding-bottom: 0;
+    }
+
+    & p.intro {
+        line-height: 1.7;
+        padding: 5px 20px;
+        padding-top: 0;
+        background-color: var(--component-color);
+        border-top: 1px solid var(--border-color);
+        border-bottom: 1px solid var(--border-color);
+        padding: 10px 20px;
+        position: relative;
+    }
+
+    & p.repo {
+        text-align: center;
+        padding: 5px 20px;
+        margin-top: 20px;
+
+        & a {
+            color: var(--link-color);
+        }
+    }
+}
+
+/** 
+ * ------------------ Responsive ------------------- 
+ *             700px - 900px - 1250px
+ */

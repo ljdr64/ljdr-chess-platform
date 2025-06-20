@@ -1,0 +1,221 @@
+/**
+ * CSS codes of Navigator Modal component
+ * @see For more information about this component check file: src\Platform\Components\NavigatorModal.ts
+ */
+
+.navigator-modal {
+    box-shadow: none;
+    background-color: var(--accent-opaque-color);
+    color: var(--text-color);
+    position: absolute;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: var(--navigator-modal-z-index) !important;
+    overflow: hidden;
+    padding: 2rem;
+
+    & button {
+        border: 1px solid var(--accent-color);
+        background-color: var(--accent-opaque-color);
+    }
+
+    & a {
+        color: var(--text-color);
+
+        &:hover {
+            filter: brightness(0.9);
+        }
+
+        &:active {
+            filter: brightness(0.8);
+        }
+    }
+
+    & .navigator-modal-title {
+        font-size: var(--navigator-modal-title-font-size);
+        font-weight: bold;
+        margin-top: 3px;
+    }
+
+    & .navigator-modal-content {
+        font-size: var(--navigator-modal-content-font-size);
+        z-index: var(--navigator-modal-z-index) !important;
+
+        & button,
+        & span {
+            margin-top: 25px;
+            font-size: var(--navigator-modal-content-small-font-size);
+        }
+    }
+
+    &.hidden {
+        visibility: hidden;
+    }
+}
+
+.navigator-modal .navigator-modal-bg {
+    background-image: var(--king-icon);
+    background-size: cover;
+    background-repeat: no-repeat;
+    content: '';
+    position: absolute;
+    width: 120px;
+    height: 125px;
+    opacity: 0.5;
+    left: -50px;
+    z-index: var(--navigator-modal-bgicon-z-index);
+    font-size: var(--navigator-modal-icon-font-size);
+}
+
+.navigator-modal:not(.navigator-modal--glass) {
+    .navigator-modal-bg {
+        width: 100px;
+        height: 105px;
+    }
+}
+
+.navigator-modal--glass {
+    box-shadow: 0 4px 30px var(--glass-box-shadow-color);
+    border: 1px solid var(--glass-border-color);
+    background: var(--glass-bg-color);
+    border-radius: 10px;
+    color: var(--glass-text-color);
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    & .navigator-modal-bg {
+        background-image: var(--king-icon-light);
+    }
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: -1;
+        backdrop-filter: blur(5px);
+        -webkit-backdrop-filter: blur(5px);
+    }
+
+    & .navigator-modal-content {
+        margin-top: 25px;
+
+        & button,
+        & span {
+            margin-top: 0px;
+        }
+    }
+
+    & button {
+        background: var(--glass-component-bg-color);
+        border: 1px solid var(--glass-component-bg-color);
+        color: var(--glass-text-color);
+        transition: background-color 0.15s ease;
+        border-radius: 5px;
+
+        &:hover {
+            background-color: var(--glass-component-active-bg-color);
+        }
+
+        &[data-selected='true'] {
+            background-color: var(--glass-component-active-bg-color);
+        }
+    }
+
+    & input {
+        background: var(--glass-component-bg-color);
+        border: 1px solid var(--glass-component-bg-color);
+        color: var(--glass-text-color);
+        transition: background-color 0.15s ease;
+        border-radius: 5px;
+        width: fit-content;
+    }
+
+    & a {
+        color: var(--link-color);
+    }
+}
+
+.navigator-modal--board {
+    width: var(--navigator-modal-board-modal-width);
+    height: var(--navigator-modal-board-modal-height);
+}
+
+@media (prefers-color-scheme: dark) {
+    .navigator-modal:not(.navigator-modal--glass) {
+        box-shadow: 0 0 5px var(--black-color);
+        border: 1px solid var(--border-color);
+    }
+}
+
+body[data-color-scheme='dark'] {
+    & .navigator-modal:not(.navigator-modal--glass) {
+        box-shadow: 0 0 5px var(--black-color);
+        border: 1px solid var(--border-color);
+    }
+}
+
+.navigator-modal--error {
+    border: 1px solid var(--glass-error-bg-color);
+    background: var(--glass-error-bg-color);
+
+    & button {
+        width: 100%;
+    }
+}
+
+.navigator-modal-backdrop {
+    display: none;
+    overflow: hidden;
+    z-index: var(--navigator-modal-backdrop-z-index);
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--backdrop-bg-color);
+    backdrop-filter: blur(1px);
+    -webkit-backdrop-filter: blur(1px);
+
+    &.show {
+        display: block;
+    }
+}
+
+/** 
+ * ------------------ Responsive ------------------- 
+ *             700px - 900px - 1250px
+ */
+@media screen and (max-width: 1250px) {
+    body:has(.navigator-modal-backdrop) {
+        overflow: hidden;
+    }
+
+    .navigator-modal-backdrop {
+        position: absolute;
+    }
+}
+
+@media screen and (max-width: 550px) {
+    .navigator-modal--glass {
+        margin: 1rem;
+        top: 30%;
+        left: 5%;
+        right: 5%;
+        transform: scale(1);
+
+        & .navigator-modal-bg {
+            left: -10%;
+        }
+
+        & input {
+            width: 100%;
+        }
+    }
+}
