@@ -7,8 +7,12 @@
 
 import { expect, test } from 'vitest';
 import { TestGame } from './types';
-import { MoveType, Square, StartPosition } from '@Chess/Types';
-import { ChessEngine } from '@Chess/Engine/ChessEngine';
+import {
+    MoveType,
+    Square,
+    StartPosition,
+} from '@ChessPlatform/chessboard/Chess/Types';
+import { ChessEngine } from '@ChessPlatform/chessboard/Chess/Engine/ChessEngine';
 
 /**
  * Board with expected moves for the king on h8.
@@ -27,7 +31,7 @@ test('King Forbidden Moves', () => {
     engine.createGame(game.board);
 
     expect(engine.getMoves(Square.h8)![MoveType.Normal]!.sort()).toEqual(
-        game.expectation.sort(),
+        game.expectation.sort()
     );
 
     console.log('--------------------------------------------------');

@@ -12,9 +12,9 @@ import {
     PieceType,
     Square,
     StartPosition,
-} from '@Chess/Types';
-import { ChessEngine } from '@Chess/Engine/ChessEngine';
-import { BoardQuerier } from '@Chess/Engine/Board/BoardQuerier';
+} from '@ChessPlatform/chessboard/Chess/Types';
+import { ChessEngine } from '@ChessPlatform/chessboard/Chess/Engine/ChessEngine';
+import { BoardQuerier } from '@ChessPlatform/chessboard/Chess/Engine/Board/BoardQuerier';
 
 /**
  * All Castling Tests For every situation.
@@ -144,12 +144,12 @@ test('Castling Moves', () => {
             const squareOfKing: Square = BoardQuerier.getSquareOfPiece(
                 BoardQuerier.getPiecesWithFilter(Color.White, [
                     PieceType.King,
-                ])[0],
+                ])[0]
             )!;
 
             // Check the castling moves of the king are equal to the expectation.
             expect(engine.getMoves(squareOfKing)![MoveType.Castling]).toEqual(
-                game.expectation,
+                game.expectation
             );
         }
 

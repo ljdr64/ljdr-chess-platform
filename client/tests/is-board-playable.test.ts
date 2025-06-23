@@ -7,8 +7,8 @@
 
 import { expect, test } from 'vitest';
 import { TestGame } from './types';
-import { GameStatus, Square } from '@Chess/Types';
-import { ChessEngine } from '@Chess/Engine/ChessEngine';
+import { GameStatus, Square } from '@ChessPlatform/chessboard/Chess/Types';
+import { ChessEngine } from '@ChessPlatform/chessboard/Chess/Engine/ChessEngine';
 
 /**
  * Games with expected status after creating board.

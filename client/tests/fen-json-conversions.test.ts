@@ -6,8 +6,13 @@
 
 import { expect, test } from 'vitest';
 import { TestGame } from './types';
-import { Converter } from '@Chess/Utils/Converter';
-import { Color, PieceType, Square, StartPosition } from '@Chess/Types';
+import { Converter } from '@ChessPlatform/chessboard/Chess/Utils/Converter';
+import {
+    Color,
+    PieceType,
+    Square,
+    StartPosition,
+} from '@ChessPlatform/chessboard/Chess/Types';
 
 /**
  * FEN Notation tests with expected JSON notation.

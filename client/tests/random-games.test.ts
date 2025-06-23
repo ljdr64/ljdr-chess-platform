@@ -6,9 +6,13 @@
 
 import { expect, test } from 'vitest';
 import { TestGame } from './types';
-import { GameStatus, Square, StartPosition } from '@Chess/Types';
-import { ChessEngine } from '@Chess/Engine/ChessEngine';
-import { Converter } from '@Chess/Utils/Converter';
+import {
+    GameStatus,
+    Square,
+    StartPosition,
+} from '@ChessPlatform/chessboard/Chess/Types';
+import { ChessEngine } from '@ChessPlatform/chessboard/Chess/Engine/ChessEngine';
+import { Converter } from '@ChessPlatform/chessboard/Chess/Utils/Converter';
 
 /**
  * Games with expected algebraic notation.

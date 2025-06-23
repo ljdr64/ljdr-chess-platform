@@ -6,8 +6,8 @@
 
 import { expect, test } from 'vitest';
 import { TestGame } from './types';
-import { Square, StartPosition } from '@Chess/Types';
-import { ChessEngine } from '@Chess/Engine/ChessEngine';
+import { Square, StartPosition } from '@ChessPlatform/chessboard/Chess/Types';
+import { ChessEngine } from '@ChessPlatform/chessboard/Chess/Engine/ChessEngine';
 
 /**
  * Random game with that contains promotion move

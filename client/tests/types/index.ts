@@ -1,4 +1,4 @@
-import { Square } from '@Chess/Types';
+import { Square } from '@ChessPlatform/chessboard/Chess/Types';
 
 /**
  * Board with moves and expectation

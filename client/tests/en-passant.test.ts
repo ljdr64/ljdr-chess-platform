@@ -7,8 +7,12 @@
 
 import { expect, test } from 'vitest';
 import { TestGame } from './types';
-import { MoveType, Square, StartPosition } from '@Chess/Types';
-import { ChessEngine } from '@Chess/Engine/ChessEngine';
+import {
+    MoveType,
+    Square,
+    StartPosition,
+} from '@ChessPlatform/chessboard/Chess/Types';
+import { ChessEngine } from '@ChessPlatform/chessboard/Chess/Engine/ChessEngine';
 
 /**
  * Every En Passant Test Games
@@ -171,7 +175,7 @@ test('En Passant Moves', () => {
             expect(engine.getGameAsFenNotation()).toEqual(game.expectation);
         else
             expect(
-                engine.getMoves(game.expectation.from)![MoveType.EnPassant],
+                engine.getMoves(game.expectation.from)![MoveType.EnPassant]
             ).toEqual(game.expectation.to);
 
         console.log('--------------------------------------------------');

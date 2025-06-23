@@ -6,9 +6,13 @@
 
 import { expect, test } from 'vitest';
 import { TestGame } from './types';
-import { ChessEngine } from '@Chess/Engine/ChessEngine';
-import { GameStatus, Square, StartPosition } from '@Chess/Types';
-import { BoardQuerier } from '@Chess/Engine/Board/BoardQuerier';
+import { ChessEngine } from '@ChessPlatform/chessboard/Chess/Engine/ChessEngine';
+import {
+    GameStatus,
+    Square,
+    StartPosition,
+} from '@ChessPlatform/chessboard/Chess/Types';
+import { BoardQuerier } from '@ChessPlatform/chessboard/Chess/Engine/Board/BoardQuerier';
 
 /**
  * Test the fifty-move rule (50 moves without a capture

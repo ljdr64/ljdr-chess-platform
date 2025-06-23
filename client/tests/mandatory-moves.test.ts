@@ -7,8 +7,8 @@
 
 import { expect, test } from 'vitest';
 import { TestGame } from './types';
-import { Moves, MoveType, Square } from '@Chess/Types';
-import { ChessEngine } from '@Chess/Engine/ChessEngine';
+import { Moves, MoveType, Square } from '@ChessPlatform/chessboard/Chess/Types';
+import { ChessEngine } from '@ChessPlatform/chessboard/Chess/Engine/ChessEngine';
 
 const mandatoryMovesTests: TestGame[] = [
     {
@@ -91,13 +91,10 @@ test('Mandatory Moves Test', () => {
         // Test every piece and its moves
         for (const expectation of game.expectation) {
             const moves: Moves = engine.getMoves(
-                Number(expectation.from) as Square,
+                Number(expectation.from) as Square
             )!;
             console.log(
-                'From: ' +
-                    expectation.from +
-                    ' Moves: ' +
-                    JSON.stringify(moves),
+                'From: ' + expectation.from + ' Moves: ' + JSON.stringify(moves)
             );
             if (expectation.to === null) {
                 const isOneOfThemTrue =
@@ -106,7 +103,7 @@ test('Mandatory Moves Test', () => {
                 expect(isOneOfThemTrue).toBe(true);
             } else {
                 expect(moves![MoveType.Normal]!.sort()).toEqual(
-                    expectation.to.sort(),
+                    expectation.to.sort()
                 );
             }
         }

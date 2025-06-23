@@ -6,8 +6,11 @@
 
 import { expect, test } from 'vitest';
 import { TestGame } from './types';
-import { GameStatus, StartPosition } from '@Chess/Types';
-import { ChessEngine } from '@Chess/Engine/ChessEngine';
+import {
+    GameStatus,
+    StartPosition,
+} from '@ChessPlatform/chessboard/Chess/Types';
+import { ChessEngine } from '@ChessPlatform/chessboard/Chess/Engine/ChessEngine';
 
 /**
  * Board with expected repetition moves.

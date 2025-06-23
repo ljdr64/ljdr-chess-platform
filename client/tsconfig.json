@@ -25,11 +25,11 @@
         "baseUrl": ".",
         "paths": {
             "@ChessPlatform/*": ["src/*"],
-            "@Chess/*": ["src/Chess/*"],
-            "@Platform/*": ["src/Platform/*"],
-            "@Services/*": ["src/Services/*"],
-            "@Utils/*": ["src/Utils/*"],
-            "@Global/*": ["src/Global/*"]
+            "@Chess/*": ["src/chessboard/Chess/*"],
+            "@Platform/*": ["src/chessboard/Platform/*"],
+            "@Services/*": ["src/chessboard/Services/*"],
+            "@Utils/*": ["src/chessboard/Utils/*"],
+            "@Global/*": ["src/chessboard/Global/*"]
         },
         "jsx": "react-jsx"
     },
