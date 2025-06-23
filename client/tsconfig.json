@@ -30,7 +30,8 @@
             "@Services/*": ["src/Services/*"],
             "@Utils/*": ["src/Utils/*"],
             "@Global/*": ["src/Global/*"]
-        }
+        },
+        "jsx": "react-jsx"
     },
     "include": ["src", "tests"]
 }
