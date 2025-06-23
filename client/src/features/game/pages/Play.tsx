@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { startChessboard } from '../startChessboard';
+import { startChessboard } from '../../../chessboard/startChessboard';
 
 export default function Play() {
     useEffect(() => {

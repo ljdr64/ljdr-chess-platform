@@ -1,4 +1,4 @@
-import { ChessPlatform } from './chessboard/ChessPlatform';
+import { ChessPlatform } from './ChessPlatform';
 
 export function startChessboard() {
     new ChessPlatform();
