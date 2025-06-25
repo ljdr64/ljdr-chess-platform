@@ -133,4 +133,4 @@ dist
 bun.lockb
 
 # Other
-todo.txt
+.vscode/
