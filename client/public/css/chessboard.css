@@ -6,7 +6,7 @@
 :root {
     /**
      * All sizes are will be calculated based on the board size.
-     * For example, if the board size is 800px, the square size 
+     * For example, if the board size is 800px, the square size
      * will be 100px(1/8 of the board size), font size will be 16px(1/50 of
       the board size), and the piece size will be 80px(1/10 of the board size).
      */
@@ -526,8 +526,7 @@ body::after {
             top: 35%;
             border-radius: 50%;
             background-color: transparent;
-            box-shadow:
-                0 0 12px 6px #fff,
+            box-shadow: 0 0 12px 6px #fff,
                 0 0 20px 10px var(--chessboard-winner-color);
         }
     }
@@ -542,34 +541,29 @@ body::after {
         }
 
         & .square-effect-icon::after {
-            animation:
-                glow 2.5s infinite,
-                glow-idle 2.5s infinite;
+            animation: glow 2.5s infinite, glow-idle 2.5s infinite;
         }
     }
 }
 
-/* Animation for winner effect, 
+/* Animation for winner effect,
 avoid changing */
 @keyframes glow {
     0% {
-        box-shadow:
-            0 0 12px 6px #fff,
+        box-shadow: 0 0 12px 6px #fff,
             0 0 20px 10px var(--chessboard-winner-color);
     }
     50% {
-        box-shadow:
-            0 0 10px 5px #fff,
+        box-shadow: 0 0 10px 5px #fff,
             0 0 15px 7px var(--chessboard-winner-color);
     }
     100% {
-        box-shadow:
-            0 0 12px 6px #fff,
+        box-shadow: 0 0 12px 6px #fff,
             0 0 20px 10px var(--chessboard-winner-color);
     }
 }
 
-/* Animation for piece's idle 
+/* Animation for piece's idle
 movement, avoid changing */
 @keyframes piece-idle {
     0% {
@@ -583,7 +577,7 @@ movement, avoid changing */
     }
 }
 
-/* Animation for glowing effect's 
+/* Animation for glowing effect's
 idle movement, avoid changing */
 @keyframes glow-idle {
     0% {
@@ -611,13 +605,13 @@ avoid changing */
     }
 }
 
-/** 
- * ------------------ Responsive ------------------- 
+/**
+ * ------------------ Responsive -------------------
  *             700px - 900px - 1250px
  */
 @media screen and (max-width: 900px) {
     :root {
-        --chessboard-board-size: calc(100vw - 5rem);
+        --chessboard-board-size: calc(100vw - 12.12rem);
     }
 }
 

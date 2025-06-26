@@ -27,6 +27,9 @@ export default function Navbar() {
 
                 {/* Desktop Nav */}
                 <div className="hidden md:flex items-center space-x-6 text-gray-700 font-medium">
+                    <Link to="/" className="hover:text-blue-600 transition">
+                        Home
+                    </Link>
                     <Link to="/play" className="hover:text-blue-600 transition">
                         Play
                     </Link>
@@ -74,6 +77,9 @@ export default function Navbar() {
             {/* Mobile Menu */}
             {isOpen && (
                 <div className="absolute w-full left-0 px-6 md:hidden mt-3 py-4 space-y-2 border-t-1 border-gray-200 bg-white">
+                    <Link to="/" className="block hover:text-blue-600">
+                        Home
+                    </Link>
                     <Link to="/play" className="block hover:text-blue-600">
                         Play
                     </Link>

@@ -1,5 +1,11 @@
 import { ChessPlatform } from './ChessPlatform';
 
+let instance: ChessPlatform | null = null;
+
 export function startChessboard() {
-    new ChessPlatform();
+    if (!instance) {
+        instance = new ChessPlatform();
+    } else {
+        instance.renderBoardAgain();
+    }
 }

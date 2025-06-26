@@ -285,7 +285,6 @@ main {
     display: flex;
     width: 100%;
     justify-content: center;
-    margin-right: 5%;
 
     & .center {
         position: relative;
@@ -437,16 +436,8 @@ main {
 
 @media screen and (min-width: 700px) and (max-width: 900px) {
     main {
-        padding: 1.75rem;
-        margin-right: 0;
-    }
-
-    #navbar {
-        width: calc(100% - 8px);
-    }
-
-    & .left > div:not(#navbar):has(div) {
-        max-width: 100%;
+        padding-left: 3rem;
+        padding-right: 3rem;
     }
 }
 
@@ -495,11 +486,6 @@ main {
 
     #notation-menu {
         height: calc(var(--notation-table-height) + 135px);
-    }
-
-    .player-section-mobile-loading-container {
-        height: 55px;
-        /*outline: 1px solid orange;*/
     }
 
     /* Reorder for mobile */

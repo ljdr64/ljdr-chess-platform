@@ -195,4 +195,11 @@ export class Navbar extends Component {
                 break;
         }
     }
+
+    /**
+     * Public method to re-render the navbar.
+     */
+    public mount(): void {
+        this.renderComponent();
+    }
 }

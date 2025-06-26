@@ -67,6 +67,8 @@ export const DEFAULT_CONFIG: Config = {
  * resign, draw, undo, etc.
  */
 export class NotationMenu extends Component {
+    protected whitePlayerName: string = '';
+    protected blackPlayerName: string = '';
     public readonly id: string = NOTATION_MENU_ID;
     private readonly chess: Chess;
 
@@ -458,20 +460,20 @@ export class NotationMenu extends Component {
             reorder(true);
         }
 
-        window.addEventListener('resize', () => {
-            if (whitePlayerSectionMobileLoadingContainer) {
-                whitePlayerSectionMobileLoadingContainer.outerHTML =
-                    whitePlayerSectionMobileLoadingContainer.innerHTML;
-                whitePlayerSectionMobileLoadingContainer = null;
-            }
-            if (blackPlayerSectionMobileLoadingContainer) {
-                blackPlayerSectionMobileLoadingContainer.outerHTML =
-                    blackPlayerSectionMobileLoadingContainer.innerHTML;
-                blackPlayerSectionMobileLoadingContainer = null;
-            }
+        // window.addEventListener('resize', () => {
+        //     if (whitePlayerSectionMobileLoadingContainer) {
+        //         whitePlayerSectionMobileLoadingContainer.outerHTML =
+        //             whitePlayerSectionMobileLoadingContainer.innerHTML;
+        //         whitePlayerSectionMobileLoadingContainer = null;
+        //     }
+        //     if (blackPlayerSectionMobileLoadingContainer) {
+        //         blackPlayerSectionMobileLoadingContainer.outerHTML =
+        //             blackPlayerSectionMobileLoadingContainer.innerHTML;
+        //         blackPlayerSectionMobileLoadingContainer = null;
+        //     }
 
-            reorder();
-        });
+        //     reorder();
+        // });
     }
 
     /**
@@ -800,12 +802,14 @@ export class NotationMenu extends Component {
          */
         const blackCapturedPieces = document.getElementById(
             'black-captured-pieces'
-        )!;
-        blackCapturedPieces.innerHTML = '';
-
+        );
         const whiteCapturedPieces = document.getElementById(
             'white-captured-pieces'
-        )!;
+        );
+
+        if (!blackCapturedPieces || !whiteCapturedPieces) return;
+
+        blackCapturedPieces.innerHTML = '';
         whiteCapturedPieces.innerHTML = '';
 
         /**
@@ -1189,7 +1193,7 @@ export class NotationMenu extends Component {
     /**
      * Add white player name to the menu.
      */
-    private displayWhitePlayerName(name: string): void {
+    public displayWhitePlayerName(name: string): void {
         const whitePlayerName = document.getElementById(`white-player-name`)!;
         if (!whitePlayerName) return;
         whitePlayerName.textContent = name;
@@ -1198,7 +1202,7 @@ export class NotationMenu extends Component {
     /**
      * Add black player name to the menu.
      */
-    private displayBlackPlayerName(name: string): void {
+    public displayBlackPlayerName(name: string): void {
         const blackPlayerName = document.getElementById(`black-player-name`)!;
         if (!blackPlayerName) return;
         blackPlayerName.textContent = name;
@@ -1696,5 +1700,14 @@ export class NotationMenu extends Component {
                 this.goBack();
                 break;
         }
+    }
+
+    /**
+     * Public method to re-render the notation menu.
+     */
+    public mount(): void {
+        this.displayWhitePlayerName(this.whitePlayerName);
+        this.displayBlackPlayerName(this.blackPlayerName);
+        this.renderComponent();
     }
 }

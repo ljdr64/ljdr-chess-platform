@@ -33,6 +33,11 @@ import { REPOSITORY_URL } from '@ChessPlatform/chessboard/Consts';
  * This class provide a menu to show the logs.
  */
 export class NavigatorModal extends Component {
+    protected modalTitle: string = '';
+    protected modalContent: string = '';
+    protected modalCloseable: boolean = false;
+    protected modalBackdrop: boolean = true;
+    protected modalHidden: boolean = false;
     public readonly id: string = NAVIGATOR_MODAL_ID;
     private readonly chess: Chess;
 
@@ -93,13 +98,19 @@ export class NavigatorModal extends Component {
     /**
      * This function renders the navigator modal.
      */
-    protected renderComponent(
+    public renderComponent(
         title: string,
         content: string,
         closeable: boolean = false,
         backdrop: boolean = true,
         hidden: boolean = false
     ): void {
+        this.modalTitle = title;
+        this.modalContent = content;
+        this.modalCloseable = closeable;
+        this.modalBackdrop = backdrop;
+        this.modalHidden = hidden;
+
         this.loadHTML(
             NAVIGATOR_MODAL_ID,
             `
@@ -838,5 +849,18 @@ export class NavigatorModal extends Component {
                 this.hide();
                 break;
         }
+    }
+
+    /**
+     * Public method to re-render the navbar.
+     */
+    public mount(): void {
+        this.renderComponent(
+            this.modalTitle,
+            this.modalContent,
+            this.modalCloseable,
+            this.modalBackdrop,
+            this.modalHidden
+        );
     }
 }

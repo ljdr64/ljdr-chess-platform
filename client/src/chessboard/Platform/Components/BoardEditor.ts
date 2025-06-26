@@ -827,4 +827,18 @@ export class BoardEditor extends Component {
                 break;
         }
     }
+
+    /**
+     * Redraws the board editor and restores its state.
+     */
+    public drawBoard(): void {
+        this.renderComponent();
+        this.addEventListeners();
+        this.loadLocalStorage();
+
+        const notation = this.chess.getGameAsFenNotation(false);
+        this.createBoard(notation);
+
+        this.updateFen();
+    }
 }

@@ -379,4 +379,11 @@ export class LogConsole extends NavbarComponent {
                 break;
         }
     }
+
+    /**
+     * Public method to re-render the log console.
+     */
+    public mount(): void {
+        this.renderComponent();
+    }
 }

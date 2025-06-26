@@ -982,6 +982,18 @@ export class ChessPlatform {
         this.platform.navigatorModal.showError((wsData as WsErrorData).message);
         this.logger.save(`Error: ${(wsData as WsErrorData).message}`);
     }
+
+    /**
+     * Re-renders the board editor, menus, and annotations
+     * when returning to the page without full reload.
+     */
+    public renderBoardAgain(): void {
+        this.platform.boardEditor.drawBoard();
+        this.platform.navbar.mount();
+        this.platform.notationMenu.mount();
+        this.platform.logConsole.mount();
+        this.platform.navigatorModal.mount();
+    }
 }
 
 /**

@@ -301,8 +301,8 @@
     }
 }
 
-/** 
- * ------------------ Responsive ------------------- 
+/**
+ * ------------------ Responsive -------------------
  *             700px - 900px - 1250px
  */
 @media screen and (max-width: 900px) {
@@ -338,7 +338,7 @@
         }
 
         & .player-name-container {
-            width: 50%;
+            width: 100%;
         }
 
         & .score-table {
